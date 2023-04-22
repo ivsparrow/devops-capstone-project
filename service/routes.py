@@ -127,7 +127,7 @@ def create_accounts():
         if account:
             account.delete()
 
-        return "", status.HTTP_204_NO_CONTENT
+        return "", status.HTTP_404_NO_CONTENT
 # ... place you code here to DELETE an account ...
 
 
