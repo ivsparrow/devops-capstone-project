@@ -61,6 +61,7 @@ def create_accounts():
 # LIST ALL ACCOUNTS
 ######################################################################
 
+
 @app.route("/accounts", methods=["GET"])
 def list_accounts():
     """
@@ -73,6 +74,7 @@ def list_accounts():
     accounts = Account.all()
     account_list = [account.serialize() for account in accounts]
 
+
     accounts = Account.all()
     account_list = [account.serialize() for account in accounts]
 
@@ -80,8 +82,10 @@ def list_accounts():
     return jsonify(account_list), status.HTTP_200_OK
 
 
+
     app.logger.info("Returning [%s] accounts", len(account_list))
     return jsonify(account_list), status.HTTP_200_OK
+
 
 ######################################################################
 # READ AN ACCOUNT
@@ -95,12 +99,16 @@ def list_accounts():
 ######################################################################
 
 # ... place you code here to UPDATE an account ...
-######################################################################
+    ######################################################################
     # UPDATE AN EXISTING ACCOUNT
+
 
     ######################################################################
 
 ######################################################################
+
+
+    ######################################################################
 
 @app.route("/accounts/<int:account_id>", methods=["PUT"])
 def update_accounts(account_id):
@@ -111,13 +119,15 @@ def update_accounts(account_id):
     app.logger.info("Request to update an Account with id: %s", account_id)
 
 
+
     account = Account.find(account_id)
     if not account:
         abort(status.HTTP_404_NOT_FOUND, f"Account with id [{account_id}] could not be found.")
 
+
     account = Account.find(account_id)
     if not account:
-            abort(status.HTTP_404_NOT_FOUND, f"Account with id [{account_id}] could not be found.")
+        abort(status.HTTP_404_NOT_FOUND, f"Account with id [{account_id}] could not be found.")
 
 
     account.deserialize(request.get_json())
