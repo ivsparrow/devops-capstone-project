@@ -1,5 +1,5 @@
 
-![Build Status](https://github.com/ivsparrow/devops-capstone-project/actions/workflows/ci-build.yml)
+![Build Status](https://github.com/ivsparrow/devops-capstone-project/actions/workflows/ci-build.yml/badge.sfg)
 
 
 # DevOps Capstone Template
